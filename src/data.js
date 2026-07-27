@@ -9,7 +9,7 @@ export const CONTACT = {
 
 export const GALLERY = [
   { img: "/gallery/fundador-despacho.jpg", t: "Dr. César Augusto Albujar Chunga en su despacho" },
-  { img: "/gallery/trabajo-equipo.jpg", t: "Revisión de casos, generación a generación" },
+  { img: "/gallery/trabajo-equipo.jpg", t: "Revisión técnica de cada expediente" },
   { img: "/gallery/despacho-trabajo.jpg", t: "Trabajo técnico en cada expediente" },
   { img: "/gallery/equipo-dos.jpg", t: "El equipo Albujar" },
 ];
@@ -18,16 +18,16 @@ export const MISION =
   "Brindar asesoría y defensa legal de excelencia en derecho penal, civil, laboral y corporativo, actuando siempre con sinceridad y transparencia para proteger los derechos e intereses de cada cliente.";
 
 export const VISION =
-  "Ser el estudio jurídico de referencia en Sullana y la región Piura, con reconocimiento nacional, consolidando un legado familiar de práctica legal íntegra y comprometida con la justicia.";
+  "Ser el estudio jurídico de referencia en Sullana y la región Piura, con reconocimiento nacional, consolidando una trayectoria de excelencia legal, íntegra y comprometida con la justicia.";
 
 export const INTRO = [
-  "Albujar Asesoría y Consultoría es un estudio de abogados liderado por el Dr. César Augusto Albujar Chunga, Gerente General, y conformado junto a sus hijos. Combinamos veinte años de trayectoria judicial con una nueva generación de profesionales formados en las mismas convicciones.",
-  "No solo defendemos casos: construimos cada estrategia legal con sinceridad y transparencia, preservando la integridad y la ética moral y profesional como principio innegociable de nuestro trabajo.",
+  "Albujar Asesoría y Consultoría es un estudio jurídico con amplia trayectoria a nivel provincial, regional y nacional, especializado en las distintas ramas del derecho. Nuestro equipo está conformado por profesionales con experiencia tanto en el sector público como privado, comprometidos con un servicio legal técnico y de resultados.",
+  "No solo defendemos casos: construimos cada estrategia legal con sinceridad y transparencia, preservando la integridad y la ética profesional como principio innegociable de nuestro trabajo.",
 ];
 
 export const FOUNDER = {
   name: "Dr. César Augusto Albujar Chunga",
-  role: "Gerente General",
+  role: "Socio Fundador",
   spec: "Derecho Penal · Gestión Pública",
   credentials: [
     "20 años de experiencia en derecho penal",

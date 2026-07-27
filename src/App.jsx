@@ -161,7 +161,7 @@ export default function App() {
           <p className="eyebrow center gold">Estudio de abogados — Sullana · Piura · Perú</p>
           <h1>Sinceridad, transparencia<br />y resultados.</h1>
           <p className="hero-sub">
-            Veinte años de experiencia judicial y una nueva generación de abogados, unidos por un mismo principio en cada caso que asumimos.
+            Veinte años de experiencia judicial y un equipo de abogados especializados en las distintas ramas del derecho, unidos por un mismo principio en cada caso.
           </p>
           <div className="cta-row">
             <a className="btn btn-gold" href="#contacto">Consulta tu caso</a>
@@ -192,7 +192,7 @@ export default function App() {
         <div className="split">
           <FadeIn>
             <p className="eyebrow gold">Quiénes somos</p>
-            <h2>Un estudio de tradición familiar</h2>
+            <h2>Trayectoria que respalda cada caso</h2>
             {INTRO.map((t) => <p className="lede" key={t}>{t}</p>)}
           </FadeIn>
           <motion.div
@@ -261,7 +261,7 @@ export default function App() {
 
       {/* ---------- EQUIPO ---------- */}
       <section id="equipo">
-        <SecHead kicker="El equipo">Una nueva generación, la misma convicción</SecHead>
+        <SecHead kicker="El equipo">Especialistas en las distintas ramas del derecho</SecHead>
         <div className="team-grid">
           {TEAM.map((m, i) => (
             <motion.div
