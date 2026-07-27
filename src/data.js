@@ -42,21 +42,33 @@ export const FOUNDER = {
 export const TEAM = [
   {
     name: "César Raúl Albujar Chulle",
+    img: "/team/cesar-raul.jpg",
     role: "Abogado",
     spec: "Derecho Laboral · Derecho Corporativo",
     extra: "Maestría en Gestión Pública",
+    credentials: [
+      "Abogado en Procuraduría — Municipalidad Provincial de Sullana",
+      "Asesor externo en la Comisión de Usuarios del Subsector Hidráulico Miguel Checa, en temas laborales y de Seguridad y Salud en el Trabajo",
+      "Asesor interno de alta dirección — Consejo del Gobierno Regional de Piura",
+      "Asesor externo en acciones de fiscalización del Consejo del Gobierno Regional",
+      "Abogado principal del estudio Albujar Asesoría y Consultoría",
+    ],
   },
   {
     name: "César Augusto Albujar Chulle",
+    img: "/team/cesar-augusto-chulle.jpg",
     role: "Abogado",
     spec: "Derecho Penal · Derecho Civil",
     extra: null,
+    credentials: [],
   },
   {
     name: "Mery Kate Elaine Peralta Seminario",
+    img: null,
     role: "Abogada",
     spec: "Gestión Pública",
     extra: "Maestría en Gestión Pública",
+    credentials: [],
   },
 ];
 

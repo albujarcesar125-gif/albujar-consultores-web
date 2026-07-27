@@ -273,10 +273,26 @@ export default function App() {
               transition={{ duration: 0.6, delay: reduced ? 0 : i * 0.12 }}
               whileHover={reduced ? {} : { y: -6 }}
             >
-              <h4>{m.name}</h4>
-              <p className="role">{m.role}</p>
-              <p className="spec">{m.spec}</p>
-              {m.extra && <p className="extra">{m.extra}</p>}
+              <div className="tc-photo">
+                {m.img ? (
+                  <img className="kenburns" src={m.img} alt={`Retrato de ${m.name}`} loading="lazy" />
+                ) : (
+                  <div className="tc-mono" aria-hidden="true">
+                    {m.name.split(" ").filter((_, idx) => idx === 0 || idx === m.name.split(" ").length - 1).map((w) => w[0]).join("")}
+                  </div>
+                )}
+              </div>
+              <div className="tc-body">
+                <h4>{m.name}</h4>
+                <p className="role">{m.role}</p>
+                <p className="spec">{m.spec}</p>
+                {m.extra && <p className="extra">{m.extra}</p>}
+                {m.credentials?.length > 0 && (
+                  <ul className="tc-creds">
+                    {m.credentials.map((c) => <li key={c}>{c}</li>)}
+                  </ul>
+                )}
+              </div>
             </motion.div>
           ))}
         </div>
