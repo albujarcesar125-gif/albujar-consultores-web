@@ -98,7 +98,7 @@ p.lede{max-width:56ch;color:var(--ink-soft);font-size:1.02rem}
 /* ---------- fundador ---------- */
 .founder-wrap{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(1.6rem,4vw,3rem);align-items:center;max-width:1180px;margin:0 auto}
 .founder-photo{overflow:hidden;border-radius:2px;box-shadow:0 24px 60px -20px rgba(0,0,0,.55);border:1px solid var(--dark-line)}
-.founder-photo img{width:100%;height:clamp(320px,42vw,460px);object-fit:cover;display:block;filter:grayscale(.15)}
+.founder-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 25%;display:block;filter:grayscale(.15)}
 .founder-card{background:var(--dark-raised);border:1px solid var(--gold);padding:clamp(1.7rem,4vw,2.6rem);position:relative}
 .founder-card::before{content:"Expediente principal";position:absolute;top:-.6em;left:1.8rem;background:var(--dark);padding:0 .6rem;font-family:var(--head);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
 .founder-top{display:flex;align-items:flex-start;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.4rem}
@@ -111,21 +111,37 @@ p.lede{max-width:56ch;color:var(--ink-soft);font-size:1.02rem}
 .creds li{padding-left:1.2rem;position:relative;font-size:.98rem;color:rgba(255,255,255,.85)}
 .creds li::before{content:"—";position:absolute;left:0;color:var(--gold)}
 
-/* ---------- equipo ---------- */
-.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;max-width:1180px;margin:0 auto;align-items:start}
-.team-card{background:var(--paper-raised);border:1px solid var(--line);border-top:3px solid var(--gold);overflow:hidden;transition:box-shadow .3s}
-.team-card:hover{box-shadow:var(--shadow)}
-.tc-photo{aspect-ratio:4/5;overflow:hidden;background:var(--dark)}
-.tc-photo img{width:100%;height:100%;object-fit:cover;display:block}
-.tc-mono{width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:2.4rem;font-weight:600;color:var(--gold);background:linear-gradient(160deg,var(--dark),var(--dark-raised))}
-.tc-body{padding:1.4rem 1.4rem 1.6rem}
-.team-card h4{font-size:1.1rem;margin-bottom:.35rem}
-.team-card .role{font-family:var(--head);font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 .7rem}
-.team-card .spec{font-size:.92rem;color:var(--gold);margin:0 0 .3rem;font-weight:600}
-.team-card .extra{font-size:.86rem;color:var(--ink-soft);font-style:italic;margin:0}
-.tc-creds{list-style:none;margin:1rem 0 0;padding-top:1rem;border-top:1px solid var(--line);display:grid;gap:.5rem}
-.tc-creds li{padding-left:1rem;position:relative;font-size:.83rem;line-height:1.5;color:var(--ink-soft)}
-.tc-creds li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+/* ---------- equipo: perfiles individuales (misma configuración que el fundador, en vino) ---------- */
+.member-list{max-width:1180px;margin:0 auto;display:grid;gap:clamp(3rem,7vw,4.5rem)}
+.member{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(1.6rem,4vw,3rem);align-items:center;padding-top:clamp(2.6rem,6vw,3.5rem);border-top:1px solid var(--dark-line)}
+.member:first-child{padding-top:0;border-top:none}
+.member.flip .member-photo{order:2}
+.member.flip .member-card{order:1}
+.member-photo{overflow:hidden;border-radius:2px;box-shadow:0 24px 60px -20px rgba(0,0,0,.55);border:1px solid var(--dark-line)}
+.member-photo img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 22%;display:block}
+.member-card{background:var(--dark-raised);border:1px solid var(--gold);padding:clamp(1.7rem,4vw,2.6rem);position:relative}
+.member-card::before{content:"Perfil profesional";position:absolute;top:-.6em;left:1.8rem;background:var(--dark);padding:0 .6rem;font-family:var(--head);font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}
+.member-top{display:flex;align-items:flex-start;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.4rem}
+.member-seal{position:relative;flex-shrink:0;width:56px;height:56px;border-radius:50%;border:1.5px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:var(--head);font-size:.78rem;color:var(--gold)}
+.member-seal-ring{position:absolute;inset:-7px;border-radius:50%;border:1px dashed rgba(201,164,74,.5);animation:spin 16s linear infinite}
+.member-card h3{font-size:1.4rem;margin:0 0 .35rem;color:#fff}
+.member-role{font-family:var(--head);font-size:.84rem;letter-spacing:.04em;color:var(--gold);margin:0}
+.member-role b{font-weight:600;color:#fff}
+.member-extra{margin-top:.4rem;font-size:.88rem;color:rgba(255,255,255,.72);font-style:italic}
+.member-creds{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;gap:.6rem}
+.member-creds li{padding-left:1.2rem;position:relative;font-size:.92rem;line-height:1.55;color:rgba(255,255,255,.88)}
+.member-creds li::before{content:"—";position:absolute;left:0;color:var(--gold)}
+
+/* ---------- aliados estratégicos ---------- */
+.ally-wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(1.6rem,4vw,3rem);align-items:center;max-width:1180px;margin:0 auto}
+.ally-photo{overflow:hidden;border-radius:2px;box-shadow:var(--shadow);border:1px solid var(--line)}
+.ally-photo img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.ally-plaque{position:relative;text-align:center;background:var(--paper-raised);border:1px solid var(--gold);padding:clamp(2rem,5vw,2.6rem) clamp(1.6rem,4vw,2.4rem);transition:box-shadow .3s,transform .3s}
+.ally-plaque::before{content:"";position:absolute;inset:8px;border:1px solid var(--line);pointer-events:none}
+.ally-plaque:hover{box-shadow:var(--shadow);transform:translateY(-4px)}
+.ally-mark{display:inline-block;font-size:1.4rem;color:var(--gold);margin-bottom:1rem}
+.ally-plaque h3{font-size:clamp(1.2rem,2.4vw,1.5rem);margin:.3rem 0 .8rem;color:var(--ink)}
+.ally-note{color:var(--ink-soft);font-size:.9rem;font-style:italic;margin:0}
 
 /* ---------- galería ---------- */
 .gal-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.1rem;max-width:1180px;margin:0 auto}
@@ -172,10 +188,12 @@ footer{background:var(--dark);color:rgba(255,255,255,.6);display:flex;justify-co
 @media (max-width:960px){
   .split{grid-template-columns:1fr}
   .split-img{height:280px}
-  .team-grid{grid-template-columns:1fr}
   .presence{max-width:420px;flex-wrap:wrap}
   .founder-wrap{grid-template-columns:1fr}
-  .founder-photo img{height:300px}
+  .founder-photo img{aspect-ratio:4/3}
+  .member{grid-template-columns:1fr}
+  .member.flip .member-photo,.member.flip .member-card{order:0}
+  .ally-wrap{grid-template-columns:1fr}
 }
 @media (max-width:760px){
   .topnav{display:none}

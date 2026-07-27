@@ -4,7 +4,7 @@ import {
   useInView, useMotionValue, useTransform, animate,
 } from "framer-motion";
 import {
-  CONTACT, MISION, VISION, INTRO, FOUNDER, TEAM, PRACTICE_AREAS, VALUES, PRESENCE, GALLERY,
+  CONTACT, MISION, VISION, INTRO, FOUNDER, TEAM, PRACTICE_AREAS, VALUES, PRESENCE, GALLERY, ALLIES,
 } from "./data.js";
 
 const EASE = [0.16, 1, 0.3, 1];
@@ -24,6 +24,8 @@ function FadeIn({ children, delay = 0, y = 22, className, amount = 0.3 }) {
     </motion.div>
   );
 }
+
+const initials = (name) => name.split(" ").slice(0, 2).map((w) => w[0]).join("").toUpperCase();
 
 function SecHead({ kicker, title, children }) {
   return (
@@ -260,40 +262,75 @@ export default function App() {
       </section>
 
       {/* ---------- EQUIPO ---------- */}
-      <section id="equipo">
+      <section id="equipo" className="dark-sec">
         <SecHead kicker="El equipo">Especialistas en las distintas ramas del derecho</SecHead>
-        <div className="team-grid">
+        <div className="member-list">
           {TEAM.map((m, i) => (
-            <motion.div
-              className="team-card"
-              key={m.name}
-              initial={reduced ? false : { opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.3 }}
-              transition={{ duration: 0.6, delay: reduced ? 0 : i * 0.12 }}
-              whileHover={reduced ? {} : { y: -6 }}
-            >
-              <div className="tc-photo">
-                {m.img ? (
-                  <img className="kenburns" src={m.img} alt={`Retrato de ${m.name}`} loading="lazy" />
-                ) : (
-                  <div className="tc-mono" aria-hidden="true">
-                    {m.name.split(" ").filter((_, idx) => idx === 0 || idx === m.name.split(" ").length - 1).map((w) => w[0]).join("")}
+            <article className={`member${i % 2 === 1 ? " flip" : ""}`} key={m.name}>
+              <motion.div
+                className="member-photo"
+                initial={reduced ? false : { opacity: 0, x: i % 2 === 1 ? 30 : -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.7, ease: EASE }}
+              >
+                <img className="kenburns" src={m.img} alt={`Retrato de ${m.name}`} loading="lazy" />
+              </motion.div>
+              <FadeIn className="member-card" amount={0.25} delay={0.1}>
+                <div className="member-top">
+                  <div className="member-seal">
+                    <span className="member-seal-ring" aria-hidden="true" />
+                    {initials(m.name)}
                   </div>
-                )}
-              </div>
-              <div className="tc-body">
-                <h4>{m.name}</h4>
-                <p className="role">{m.role}</p>
-                <p className="spec">{m.spec}</p>
-                {m.extra && <p className="extra">{m.extra}</p>}
+                  <div>
+                    <h3>{m.name}</h3>
+                    <p className="member-role"><b>{m.role}</b> · {m.spec}</p>
+                  </div>
+                </div>
+                {m.extra && <p className="extra member-extra">{m.extra}</p>}
                 {m.credentials?.length > 0 && (
-                  <ul className="tc-creds">
-                    {m.credentials.map((c) => <li key={c}>{c}</li>)}
+                  <ul className="member-creds">
+                    {m.credentials.map((c, ci) => (
+                      <motion.li
+                        key={c}
+                        initial={reduced ? false : { opacity: 0, x: -14 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true, amount: 0.6 }}
+                        transition={{ duration: 0.45, delay: reduced ? 0 : ci * 0.08 }}
+                      >
+                        {c}
+                      </motion.li>
+                    ))}
                   </ul>
                 )}
-              </div>
-            </motion.div>
+              </FadeIn>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {/* ---------- ALIADOS ESTRATÉGICOS ---------- */}
+      <section className="tint-sec" id="aliados">
+        <SecHead kicker="Alianzas estratégicas" title="Trabajamos junto a aliados de confianza">
+          Además de nuestro equipo, Albujar Asesoría y Consultoría colabora de manera estratégica con estudios jurídicos aliados, ampliando nuestra capacidad de respuesta en distintas materias del derecho.
+        </SecHead>
+        <div className="ally-wrap">
+          <motion.div
+            className="ally-photo"
+            initial={reduced ? false : { opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.7, ease: EASE }}
+          >
+            <img className="kenburns" src="/gallery/equipo-directivo.jpg" alt="Equipo directivo de Albujar Asesoría y Consultoría junto a representantes de su estudio jurídico aliado" loading="lazy" />
+          </motion.div>
+          {ALLIES.map((a, i) => (
+            <FadeIn className="ally-plaque" key={a.name} delay={0.1 + i * 0.1}>
+              <span className="ally-mark" aria-hidden="true">✦</span>
+              <p className="eyebrow gold">{a.note}</p>
+              <h3>{a.name}</h3>
+              <p className="ally-note">Colaboración estratégica en el ejercicio profesional del derecho.</p>
+            </FadeIn>
           ))}
         </div>
       </section>

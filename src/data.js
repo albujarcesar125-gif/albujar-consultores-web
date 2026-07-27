@@ -59,16 +59,28 @@ export const TEAM = [
     img: "/team/cesar-augusto-chulle.jpg",
     role: "Abogado",
     spec: "Derecho Penal · Derecho Civil",
-    extra: null,
-    credentials: [],
+    extra: "Estudios de Maestría en Derecho Penal",
+    credentials: [
+      "Abogado litigante especializado en derecho penal",
+      "Abogado consultor externo — Municipalidad de Vichayal",
+    ],
   },
   {
     name: "Mery Kate Elaine Peralta Seminario",
-    img: null,
+    img: "/team/mery-kate.jpg",
     role: "Abogada",
     spec: "Gestión Pública",
     extra: "Maestría en Gestión Pública",
-    credentials: [],
+    credentials: [
+      "Abogada en el área de riesgos — Municipalidad de Querecotillo",
+    ],
+  },
+];
+
+export const ALLIES = [
+  {
+    name: "Rocío Imán Aldeán Abogados E.I.R.L.",
+    note: "Estudio jurídico aliado",
   },
 ];
 
