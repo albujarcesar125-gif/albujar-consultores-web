@@ -13,20 +13,6 @@
   --head:"Oswald","Segoe UI",Arial,sans-serif;
   --body:"Public Sans","Segoe UI",Arial,sans-serif;
 }
-@media (prefers-color-scheme: dark){
-  :root{
-    --paper:#0b1424; --paper-raised:#101d33; --ink:#eef1f7; --ink-soft:#97a2ba;
-    --line:#1e2b45; --gold:#c9a44a; --dark:#060b16; --dark-raised:#0c1626; --dark-line:#17233b;
-  }
-}
-:root[data-theme="dark"]{
-  --paper:#0b1424; --paper-raised:#101d33; --ink:#eef1f7; --ink-soft:#97a2ba;
-  --line:#1e2b45; --gold:#c9a44a; --dark:#060b16; --dark-raised:#0c1626; --dark-line:#17233b;
-}
-:root[data-theme="light"]{
-  --paper:#f5f6f9; --paper-raised:#ffffff; --ink:#16213a; --ink-soft:#55617a;
-  --line:#dde1ea; --gold:#96721a; --dark:#0e1b33; --dark-raised:#142544; --dark-line:#23375c;
-}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 .pageline{position:fixed;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--gold),var(--gold-bright));transform-origin:left;z-index:80}
