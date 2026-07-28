@@ -34,6 +34,7 @@ export const FOUNDER = {
     "Juez de Paz Letrado Titular",
     "Juez Provisional del Primer Juzgado Penal",
     'Autor del libro "Guía para el Juez de Paz" — Aral Editores',
+    "Asesoría y consultoría en temas electorales",
     "Maestría en Gestión Pública",
     "Bachiller de la Maestría en Derecho Penal — Universidad Nacional de Piura",
   ],
