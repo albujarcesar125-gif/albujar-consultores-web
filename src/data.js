@@ -59,11 +59,13 @@ export const TEAM = [
     name: "César Augusto Albujar Chulle",
     img: "/team/cesar-augusto-chulle.jpg",
     role: "Abogado",
-    spec: "Derecho Penal · Derecho Civil",
-    extra: "Estudios de Maestría en Derecho Penal",
+    spec: "Derecho Penal · Derecho Civil · Derecho Tributario · Gestión Pública · Derecho Administrativo",
+    extra: "Estudios de Maestría en Derecho Penal, Procesal Penal",
     credentials: [
-      "Abogado litigante especializado en derecho penal",
-      "Abogado consultor externo — Municipalidad de Vichayal",
+      "Abogado en la Fiscalía Penal Corporativa de Sullana",
+      "Abogado en Asesoría Legal — Municipalidad Distrital de Miguel Checa",
+      "Abogado externo en la Oficina de Asesoría Legal del Proyecto Especial Puyango Tumbes",
+      "Abogado en Asesoría Legal — Municipalidad Distrital de Vichayal",
     ],
   },
   {
@@ -73,6 +75,7 @@ export const TEAM = [
     spec: "Gestión Pública",
     extra: "Maestría en Gestión Pública",
     credentials: [
+      "Especialista en evaluación de riesgos y desastres por el fenómeno de El Niño",
       "Abogada en el área de riesgos — Municipalidad de Querecotillo",
     ],
   },
